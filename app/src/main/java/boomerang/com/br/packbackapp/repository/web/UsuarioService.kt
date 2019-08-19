@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface Webservice {
+interface UsuarioService {
 
     @GET("/usuarios/{id}")
     fun getUsuario(@Path("id") id: Long): Call<Usuario>

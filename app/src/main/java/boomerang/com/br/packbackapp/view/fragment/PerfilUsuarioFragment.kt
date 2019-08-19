@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import boomerang.com.br.packbackapp.R
 import boomerang.com.br.packbackapp.view.model.PerfilUsuarioViewModel
 
-class PerfilUsuarioFragment : Fragment() {
+class PerfilUsuarioFragment : Fragment(), Injectable {
 
-    private val viewModel: PerfilUsuarioViewModel by lazy {  }
+    private val viewModel: PerfilUsuarioViewModel by viewModels {  }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

@@ -3,13 +3,15 @@ package boomerang.com.br.packbackapp.repository
 import androidx.lifecycle.LiveData
 import boomerang.com.br.packbackapp.domain.Usuario
 import boomerang.com.br.packbackapp.repository.local.UsuarioDao
-import boomerang.com.br.packbackapp.repository.web.Webservice
+import boomerang.com.br.packbackapp.repository.web.UsuarioService
 import java.util.concurrent.Executor
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class UsuarioRepository @Inject constructor(
-        private val webservice: Webservice,
+        private val usuarioService: UsuarioService,
         private val executor: Executor,
         private val usuarioDao: UsuarioDao
 ) {
@@ -30,7 +32,7 @@ class UsuarioRepository @Inject constructor(
 
             if (!usuarioAtualizado) {
 
-                val response = webservice.getUsuario(id).execute()
+                val response = usuarioService.getUsuario(id).execute()
 
                 val usuario = response.body()
                         ?: throw IllegalStateException("Usuario não pode ser nulo")
