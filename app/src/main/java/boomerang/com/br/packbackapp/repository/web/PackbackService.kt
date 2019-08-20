@@ -19,7 +19,7 @@ class PackbackService {
 
     private val httpClient = OkHttpClient.Builder()
 
-    fun <S : Any> create(serviceClass: Class<S>): S? {
+    fun <S : Any> cria(serviceClass: Class<S>): S? {
 
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
