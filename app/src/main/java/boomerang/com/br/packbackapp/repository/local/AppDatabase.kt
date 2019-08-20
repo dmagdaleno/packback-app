@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import boomerang.com.br.packbackapp.domain.Usuario
 
 @Database(entities = [Usuario::class], version = 1)
-abstract class UsuarioDatabase : RoomDatabase() {
+abstract class Database : RoomDatabase() {
 
     abstract fun usuarioDao(): UsuarioDao
 }
