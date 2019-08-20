@@ -2,13 +2,16 @@ package boomerang.com.br.packbackapp.domain
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class Usuario (
+
         @PrimaryKey
-        val id: Long,
+        val id: Long? = null,
 
-        val email: String,
+        val email: String = "Indefinido",
 
-        val nome: String
+        val nome: String = "Indefinido"
 )
