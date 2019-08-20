@@ -5,9 +5,8 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import boomerang.com.br.packbackapp.domain.Usuario
 import boomerang.com.br.packbackapp.repository.UsuarioRepository
-import javax.inject.Inject
 
-class PerfilUsuarioViewModel @Inject constructor (
+class PerfilUsuarioViewModel (
         savedStateHandle: SavedStateHandle,
         repositorio: UsuarioRepository
 ): ViewModel() {
