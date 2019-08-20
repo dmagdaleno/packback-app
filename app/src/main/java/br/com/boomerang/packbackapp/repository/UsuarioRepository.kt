@@ -1,10 +1,10 @@
-package boomerang.com.br.packbackapp.repository
+package br.com.boomerang.packbackapp.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import boomerang.com.br.packbackapp.domain.Usuario
-import boomerang.com.br.packbackapp.repository.local.UsuarioDao
-import boomerang.com.br.packbackapp.repository.web.UsuarioService
+import br.com.boomerang.packbackapp.domain.Usuario
+import br.com.boomerang.packbackapp.repository.local.UsuarioDao
+import br.com.boomerang.packbackapp.repository.web.UsuarioService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,4 +1,4 @@
-package boomerang.com.br.packbackapp
+package br.com.boomerang.packbackapp
 
 import org.junit.Test
 

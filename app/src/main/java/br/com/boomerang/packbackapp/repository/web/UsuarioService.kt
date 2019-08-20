@@ -1,6 +1,6 @@
-package boomerang.com.br.packbackapp.repository.web
+package br.com.boomerang.packbackapp.repository.web
 
-import boomerang.com.br.packbackapp.domain.Usuario
+import br.com.boomerang.packbackapp.domain.Usuario
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

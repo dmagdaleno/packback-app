@@ -1,10 +1,10 @@
-package boomerang.com.br.packbackapp.view.model
+package br.com.boomerang.packbackapp.view.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import boomerang.com.br.packbackapp.domain.Usuario
-import boomerang.com.br.packbackapp.repository.UsuarioRepository
+import br.com.boomerang.packbackapp.domain.Usuario
+import br.com.boomerang.packbackapp.repository.UsuarioRepository
 
 class PerfilUsuarioViewModel (
         savedStateHandle: SavedStateHandle,

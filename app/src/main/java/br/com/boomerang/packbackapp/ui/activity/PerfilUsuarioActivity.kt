@@ -1,12 +1,12 @@
-package boomerang.com.br.packbackapp.ui.activity
+package br.com.boomerang.packbackapp.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import boomerang.com.br.packbackapp.R
-import boomerang.com.br.packbackapp.repository.UsuarioRepository
-import boomerang.com.br.packbackapp.repository.local.AppDatabase
-import boomerang.com.br.packbackapp.repository.web.PackbackService
-import boomerang.com.br.packbackapp.repository.web.UsuarioService
+import br.com.boomerang.packbackapp.R
+import br.com.boomerang.packbackapp.repository.UsuarioRepository
+import br.com.boomerang.packbackapp.repository.local.AppDatabase
+import br.com.boomerang.packbackapp.repository.web.PackbackService
+import br.com.boomerang.packbackapp.repository.web.UsuarioService
 import kotlinx.android.synthetic.main.activity_perfil_usuario.*
 
 class PerfilUsuarioActivity : AppCompatActivity() {

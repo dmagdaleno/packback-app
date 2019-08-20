@@ -1,8 +1,8 @@
-package boomerang.com.br.packbackapp.ui.activity
+package br.com.boomerang.packbackapp.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import boomerang.com.br.packbackapp.R
+import br.com.boomerang.packbackapp.R
 
 class LoginActivity : AppCompatActivity() {
 

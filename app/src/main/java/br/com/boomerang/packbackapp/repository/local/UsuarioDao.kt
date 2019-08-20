@@ -1,11 +1,11 @@
-package boomerang.com.br.packbackapp.repository.local
+package br.com.boomerang.packbackapp.repository.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import boomerang.com.br.packbackapp.domain.Usuario
+import br.com.boomerang.packbackapp.domain.Usuario
 
 @Dao
 interface UsuarioDao {

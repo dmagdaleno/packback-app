@@ -1,4 +1,4 @@
-package boomerang.com.br.packbackapp
+package br.com.boomerang.packbackapp
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("boomerang.com.br.packbackapp", appContext.packageName)
+        assertEquals("br.com.boomerang.packbackapp", appContext.packageName)
     }
 }

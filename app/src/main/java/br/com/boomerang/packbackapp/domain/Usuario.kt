@@ -1,4 +1,4 @@
-package boomerang.com.br.packbackapp.domain
+package br.com.boomerang.packbackapp.domain
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

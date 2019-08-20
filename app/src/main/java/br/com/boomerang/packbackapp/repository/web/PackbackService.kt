@@ -1,4 +1,4 @@
-package boomerang.com.br.packbackapp.repository.web
+package br.com.boomerang.packbackapp.repository.web
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

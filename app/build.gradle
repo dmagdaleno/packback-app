@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "boomerang.com.br.packbackapp"
+        applicationId "br.com.boomerang.packbackapp"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1

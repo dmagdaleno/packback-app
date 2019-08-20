@@ -1,10 +1,10 @@
-package boomerang.com.br.packbackapp.repository.local
+package br.com.boomerang.packbackapp.repository.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import boomerang.com.br.packbackapp.domain.Usuario
+import br.com.boomerang.packbackapp.domain.Usuario
 
 @Database(entities = [Usuario::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
