@@ -5,10 +5,10 @@ import androidx.lifecycle.LiveData
 import br.com.boomerang.packbackapp.domain.Usuario
 import br.com.boomerang.packbackapp.repository.local.UsuarioDao
 import br.com.boomerang.packbackapp.repository.web.UsuarioService
+import org.jetbrains.anko.doAsync
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.concurrent.TimeUnit
 
 class UsuarioRepository (
         private val service: UsuarioService,
@@ -17,7 +17,6 @@ class UsuarioRepository (
 
     companion object {
         private const val TAG = "UsuarioRepository"
-        private val FRESH_TIMEOUT = TimeUnit.DAYS.toMillis(1)
     }
 
     fun getUsuario(id: Long): LiveData<Usuario> {
@@ -27,31 +26,19 @@ class UsuarioRepository (
 
     private fun atualizaUsuario(id: Long) {
 
-        val usuarioAtualizado = usuarioEstaAtualizado(id)
+        service.getUsuario(id).enqueue(object : Callback<Usuario> {
 
-        if (!usuarioAtualizado) {
+            override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                Log.e(TAG, "Erro ao buscar usuário", t)
+            }
 
-            service.getUsuario(1).enqueue(object : Callback<Usuario> {
-
-                override fun onFailure(call: Call<Usuario>, t: Throwable) {
-                    Log.e(TAG, "Erro ao buscar usuário", t)
-                }
-
-                override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
-
-                    val usuario = response.body()
-                            ?: throw IllegalArgumentException("Usuário não encontrado")
-
+            override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
+                response.body()?.let { usuario ->
                     Log.d(TAG, "Encontrado usuário ${usuario.nome}")
-
-                    dao.salva(usuario)
+                    doAsync { dao.salva(usuario) }
                 }
+            }
 
-            })
-        }
-    }
-
-    private fun usuarioEstaAtualizado(id: Long): Boolean {
-        return dao.carrega(id).value != null
+        })
     }
 }
