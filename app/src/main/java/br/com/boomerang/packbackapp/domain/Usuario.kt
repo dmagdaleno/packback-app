@@ -13,5 +13,7 @@ data class Usuario (
 
         val email: String = "Indefinido",
 
-        val nome: String = "Indefinido"
+        val nome: String = "Indefinido",
+
+        val pontos: Long = 0
 )
