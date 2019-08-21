@@ -2,11 +2,14 @@ package br.com.boomerang.packbackapp.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import br.com.boomerang.packbackapp.R
+import br.com.boomerang.packbackapp.domain.Usuario
 import br.com.boomerang.packbackapp.repository.UsuarioRepository
 import br.com.boomerang.packbackapp.repository.local.AppDatabase
 import br.com.boomerang.packbackapp.repository.web.PackbackService
 import br.com.boomerang.packbackapp.repository.web.UsuarioService
+import br.com.boomerang.packbackapp.view.model.PerfilUsuarioViewModel
 import kotlinx.android.synthetic.main.activity_perfil_usuario.*
 
 class PerfilUsuarioActivity : AppCompatActivity() {
@@ -26,9 +29,12 @@ class PerfilUsuarioActivity : AppCompatActivity() {
 
         val repo = UsuarioRepository(service, dao)
 
-        val usuario = repo.getUsuario(1).value ?: throw IllegalArgumentException("Usuário não existe")
+        val viewModel = PerfilUsuarioViewModel(1, repo)
 
-        usuario_nome.text = usuario.nome
+        viewModel.usuario.observe(this, Observer<Usuario> { usuario ->
+            usuario_nome.text = usuario.nome
+        })
 
+        AppDatabase.destroyInstance()
     }
 }
