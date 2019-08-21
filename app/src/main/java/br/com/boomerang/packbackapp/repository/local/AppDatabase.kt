@@ -12,6 +12,9 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
 
     companion object {
+
+        private const val NOME_BASE = "packback.db"
+
         private var instance: AppDatabase? = null
 
         fun getInstance(context: Context): AppDatabase {
@@ -20,7 +23,7 @@ abstract class AppDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                             context.applicationContext,
                             AppDatabase::class.java,
-                            "packback.db")
+                            NOME_BASE)
                             .build()
                 }
             }
