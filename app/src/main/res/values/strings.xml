@@ -5,5 +5,9 @@
     <string name="nome_padrao">João Guimarães Rosa</string>
     <string name="banner_topo">Banner do topo</string>
     <string name="data_inicio_padrao">Coletando desde abril de 2019</string>
+    <string name="coletas_padrao">53</string>
+    <string name="coletas_solicitadas">COLETAS SOLICITADAS</string>
+    <string name="materiais_padrao">120 kg</string>
+    <string name="materiais_reciclados">MATERIAIS RECICLADOS</string>
 
 </resources>
