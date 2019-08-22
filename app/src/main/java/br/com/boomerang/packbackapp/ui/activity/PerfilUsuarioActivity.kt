@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import br.com.boomerang.packbackapp.R
 import br.com.boomerang.packbackapp.domain.Usuario
-import br.com.boomerang.packbackapp.repository.local.AppDatabase
 import br.com.boomerang.packbackapp.view.model.PerfilUsuarioViewModel
 import br.com.boomerang.packbackapp.view.model.PerfilUsuarioViewModelFactory
 import kotlinx.android.synthetic.main.activity_perfil_usuario.*
@@ -26,7 +25,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_perfil_usuario)
 
         viewModel.usuario.observe(this, Observer<Usuario> { usuario ->
-            usuario_nome.text = usuario?.nome
+            perfil_usuario_nome.text = usuario?.nome
         })
     }
 }
