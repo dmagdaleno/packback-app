@@ -15,5 +15,7 @@ data class Usuario (
 
         val nome: String = "Indefinido",
 
+        val foto: String = "@mipmap/ic_launcher_round",
+
         val pontos: Long = 0
 )
