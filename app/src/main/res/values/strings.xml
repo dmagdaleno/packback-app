@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">PackbackApp</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="foto_perfil">Foto do perfil</string>
+    <string name="nome_padrao">João Guimarães Rosa</string>
+    <string name="banner_topo">Banner do topo</string>
+    <string name="data_inicio_padrao">Coletando desde abril de 2019</string>
+
 </resources>
