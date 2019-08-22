@@ -6,13 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.PerfilUsuarioActivity">
 
+    <ImageView
+        android:id="@+id/foto_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/usuario_nome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.226"
+        app:srcCompat="@mipmap/ic_launcher_round"
+        android:contentDescription="@string/foto_perfil" />
+
     <TextView
         android:id="@+id/usuario_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="183dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="343dp"
-        android:layout_marginEnd="170dp"
+        android:layout_marginEnd="160dp"
         android:layout_marginBottom="369dp"
         android:text="Nome"
         app:layout_constraintBottom_toBottomOf="parent"
