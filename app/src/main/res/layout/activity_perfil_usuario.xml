@@ -22,62 +22,69 @@
         android:id="@+id/perfil_usuario_foto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:contentDescription="@string/foto_perfil"
         app:layout_constraintBottom_toTopOf="@id/perfil_usuario_nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/perfil_usuario_banner_topo"
         app:layout_constraintVertical_bias="0.0"
-        tools:src="@mipmap/ic_launcher_round"
-        android:contentDescription="@string/foto_perfil" />
+        tools:src="@mipmap/ic_launcher_round" />
 
     <TextView
         android:id="@+id/perfil_usuario_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="160dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="160dp"
-        tools:text="@string/nome_padrao"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_foto" />
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_foto"
+        tools:text="@string/nome_padrao" />
 
     <TextView
         android:id="@+id/perfil_usuario_data_inicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="160dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="160dp"
-        tools:text="@string/data_inicio_padrao"
+        android:textColor="@android:color/holo_blue_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_nome" />
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_nome"
+        tools:text="@string/data_inicio_padrao" />
 
     <TextView
         android:id="@+id/perfil_usuario_coletas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
-        tools:text="@string/coletas_padrao"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_data_inicio" />
+        android:layout_marginTop="32dp"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/perfil_usuario_coletas_txt"
+        app:layout_constraintStart_toStartOf="@id/perfil_usuario_coletas_txt"
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_data_inicio"
+        tools:text="@string/coletas_padrao" />
 
     <TextView
         android:id="@+id/perfil_usuario_coletas_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/coletas_solicitadas"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/perfil_usuario_materiais_txt"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/perfil_usuario_coletas" />
 
@@ -85,24 +92,84 @@
         android:id="@+id/perfil_usuario_materiais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="160dp"
         android:layout_marginEnd="160dp"
-        tools:text="@string/materiais_padrao"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_coletas_txt" />
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/perfil_usuario_materiais_txt"
+        app:layout_constraintStart_toStartOf="@id/perfil_usuario_materiais_txt"
+        app:layout_constraintTop_toTopOf="@id/perfil_usuario_coletas"
+        tools:text="@string/materiais_padrao" />
 
     <TextView
         android:id="@+id/perfil_usuario_materiais_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/materiais_reciclados"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_materiais"
+        app:layout_constraintTop_toTopOf="@id/perfil_usuario_coletas_txt" />
+
+    <View
+        android:id="@+id/perfil_usuario_linha_topo"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_materiais" />
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_materiais_txt"/>
+
+    <TextView
+        android:id="@+id/perfil_usuario_todas_coletas_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/todas_coletas"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@id/perfil_usuario_coletas_txt"
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_linha_topo" />
+
+    <ImageView
+        android:id="@+id/perfil_usuario_todas_coletas_ico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ico_todas_coletas"
+        app:layout_constraintEnd_toEndOf="@id/perfil_usuario_materiais_txt"
+        app:layout_constraintTop_toTopOf="@id/perfil_usuario_todas_coletas_txt"
+        app:layout_constraintBottom_toBottomOf="@id/perfil_usuario_todas_coletas_txt"
+        android:src="@drawable/ic_arrow_forward_black_24dp" />
+
+    <View
+        android:id="@+id/perfil_usuario_linha_base"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_linha_topo"/>
+
+    <Button
+        android:id="@+id/perfil_usuario_solicitar_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/solicitar_coleta"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_linha_base" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
