@@ -142,7 +142,7 @@
         app:layout_constraintEnd_toEndOf="@id/perfil_usuario_materiais_txt"
         app:layout_constraintTop_toTopOf="@id/perfil_usuario_todas_coletas_txt"
         app:layout_constraintBottom_toBottomOf="@id/perfil_usuario_todas_coletas_txt"
-        android:src="@drawable/ic_arrow_forward_black_24dp" />
+        tools:src="@drawable/ic_arrow_forward_black_24dp" />
 
     <View
         android:id="@+id/perfil_usuario_linha_base"
