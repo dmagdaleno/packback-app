@@ -12,5 +12,10 @@
     <string name="solicitar_coleta">SOLICITAR COLETA</string>
     <string name="todas_coletas">Todas as coletas</string>
     <string name="ico_todas_coletas">Vai para lista de todas as coletas</string>
+    <string name="login_email">Email:</string>
+    <string name="login_senha">Senha:</string>
+    <string name="login_esq_senha">Esqueci minha senha</string>
+    <string name="login_entrar">Entrar</string>
+    <string name="login_cadastrar">Criar conta</string>
 
 </resources>
