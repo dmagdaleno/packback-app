@@ -9,5 +9,8 @@
     <string name="coletas_solicitadas">COLETAS SOLICITADAS</string>
     <string name="materiais_padrao">120 kg</string>
     <string name="materiais_reciclados">MATERIAIS RECICLADOS</string>
+    <string name="solicitar_coleta">SOLICITAR COLETA</string>
+    <string name="todas_coletas">Todas as coletas</string>
+    <string name="ico_todas_coletas">Vai para lista de todas as coletas</string>
 
 </resources>
