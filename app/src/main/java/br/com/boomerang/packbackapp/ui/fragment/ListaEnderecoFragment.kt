@@ -49,8 +49,8 @@ class ListaEnderecoFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_lista_endereco, container, false)
 
         val enderecos = listOf(
-                Endereco("Casa", "Rua", "Das Flores", 31),
-                Endereco("Trabalho", "Av", "Paulista", 2300)
+                Endereco("Casa", "Rua das Flores", 31),
+                Endereco("Trabalho", "Av Paulista", 2300)
         )
 
         view.lista_endereco.adapter = EnderecoAdapter(context!!, enderecos)
