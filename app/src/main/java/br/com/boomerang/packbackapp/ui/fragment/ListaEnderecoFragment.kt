@@ -9,6 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 
 import br.com.boomerang.packbackapp.R
+import br.com.boomerang.packbackapp.domain.Endereco
+import br.com.boomerang.packbackapp.ui.adapter.EmbalagemAdapter
+import br.com.boomerang.packbackapp.ui.adapter.EnderecoAdapter
+import kotlinx.android.synthetic.main.fragment_lista_embalagem.view.*
+import kotlinx.android.synthetic.main.fragment_lista_endereco.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,8 +45,17 @@ class ListaEnderecoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_endereco, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_lista_endereco, container, false)
+
+        val enderecos = listOf(
+                Endereco("Casa", "Rua", "Das Flores", 31),
+                Endereco("Trabalho", "Av", "Paulista", 2300)
+        )
+
+        view.lista_endereco.adapter = EnderecoAdapter(context!!, enderecos)
+
+        return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event

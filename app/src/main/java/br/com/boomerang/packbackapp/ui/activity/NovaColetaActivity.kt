@@ -6,8 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import br.com.boomerang.packbackapp.R
 import br.com.boomerang.packbackapp.ui.fragment.ListaEmbalagemFragment
+import br.com.boomerang.packbackapp.ui.fragment.ListaEnderecoFragment
 
-class NovaColetaActivity : AppCompatActivity(), ListaEmbalagemFragment.OnFragmentInteractionListener {
+class NovaColetaActivity :
+        AppCompatActivity(),
+        ListaEmbalagemFragment.OnFragmentInteractionListener,
+        ListaEnderecoFragment.OnFragmentInteractionListener {
 
     companion object {
         private const val TAG = "NovaColetaActivity"
@@ -23,6 +27,7 @@ class NovaColetaActivity : AppCompatActivity(), ListaEmbalagemFragment.OnFragmen
 
         val tx = supportFragmentManager.beginTransaction()
         tx.replace(R.id.frame_embalagens, ListaEmbalagemFragment())
+        tx.replace(R.id.frame_enderecos, ListaEnderecoFragment())
 
         tx.commit()
     }
