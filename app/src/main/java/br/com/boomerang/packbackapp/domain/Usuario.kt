@@ -12,9 +12,9 @@ data class Usuario (
         @PrimaryKey
         val id: Long? = null,
 
-        val email: String = "Indefinido",
+        val email: String = "indefinido",
 
-        val nome: String = "Indefinido",
+        val nome: String = "indefinido",
 
         val foto: String = "@mipmap/ic_launcher_round",
 
