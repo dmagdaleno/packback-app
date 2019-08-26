@@ -9,6 +9,8 @@ import br.com.boomerang.packbackapp.repository.UsuarioRepository
 import br.com.boomerang.packbackapp.repository.web.ColetaService
 import br.com.boomerang.packbackapp.repository.web.PackbackService
 import br.com.boomerang.packbackapp.ui.Keys
+import br.com.boomerang.packbackapp.ui.adapter.ColetaAdapter
+import kotlinx.android.synthetic.main.activity_lista_coleta.*
 import org.jetbrains.anko.doAsync
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,6 +38,7 @@ class ListaColetaActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<List<Coleta>>, response: Response<List<Coleta>>) {
                     response.body()?.let { coletas ->
                         Log.d(TAG, "Coletas encontradas $coletas")
+                        lista_coleta_list.adapter = ColetaAdapter(this@ListaColetaActivity, coletas)
                     }
                 }
 
