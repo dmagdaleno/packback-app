@@ -22,9 +22,9 @@ data class Usuario (
 
         val pontos: Long = 0,
 
-        val totalColetas: Long = 0,
+        val totalColetas: Int = 0,
 
-        val totalPesoColetas: Long = 0
+        val totalPesoColetas: Double = 0.0
 ) {
         fun getPesoColetasFormatado() = "$totalPesoColetas kg"
 }
