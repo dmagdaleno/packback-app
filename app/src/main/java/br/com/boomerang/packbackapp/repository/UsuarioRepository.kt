@@ -60,14 +60,21 @@ class UsuarioRepository (
                 response.body()?.let { coletas ->
                     Log.d(TAG, "Coletas encontradas $coletas")
 
-                    val pesoTotal = coletas.map { it.embalagem.peso }.reduce { acc, peso -> acc + peso }
+                    val pesoTotal = getPesoTotal(coletas)
 
                     val usuarioAtualizado = usuario.copy(totalColetas = coletas.size, totalPesoColetas = pesoTotal)
 
                     doAsync { dao.salva(usuarioAtualizado) }
                 }
             }
-
         })
+    }
+
+    private fun getPesoTotal(coletas: List<Coleta>): Double {
+        val pesos = coletas.map { it.embalagem.peso }
+        return if (pesos.isNotEmpty())
+            pesos.reduce { acc, peso -> acc + peso }
+        else
+            0.0
     }
 }
