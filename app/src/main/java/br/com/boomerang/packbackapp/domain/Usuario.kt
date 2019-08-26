@@ -20,5 +20,11 @@ data class Usuario (
 
         val dataCadastro: Date = Date(),
 
-        val pontos: Long = 0
-)
+        val pontos: Long = 0,
+
+        val totalColetas: Long = 0,
+
+        val totalPesoColetas: Long = 0
+) {
+        fun getPesoColetasFormatado() = "$totalPesoColetas kg"
+}

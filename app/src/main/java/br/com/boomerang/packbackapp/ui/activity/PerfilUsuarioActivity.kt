@@ -32,12 +32,13 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_usuario)
 
-
         viewModel.usuario.observe(this, Observer<Usuario> { usuario ->
             usuario?.let {
                 perfil_usuario_nome.text = it.nome
                 val dataCadastro = "Coletando desde ${formatador.format(it.dataCadastro)}"
                 perfil_usuario_data_inicio.text = dataCadastro
+                perfil_usuario_coletas.text = it.totalColetas.toString()
+                perfil_usuario_materiais.text = it.getPesoColetasFormatado()
             }
         })
     }
