@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import br.com.boomerang.packbackapp.R
 import br.com.boomerang.packbackapp.domain.Embalagem
+import br.com.boomerang.packbackapp.util.formata
 import kotlinx.android.synthetic.main.item_embalagem.view.*
 
 class EmbalagemAdapter (
@@ -26,9 +27,7 @@ class EmbalagemAdapter (
         return view
     }
 
-    private fun formataValor(valor: Double) = "R$ ${valor.formata(2)}"
-
-    fun Double.formata(digitos: Int) = String.format("%.${digitos}f", this)
+    private fun formataValor(valor: Double) = "R$ ${valor.formata()}"
 
     override fun getItem(posicao: Int) = embalagens[posicao]
 
