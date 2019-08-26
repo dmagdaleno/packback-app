@@ -1,6 +1,7 @@
 package br.com.boomerang.packbackapp.ui.activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -43,5 +44,17 @@ class PerfilUsuarioActivity : AppCompatActivity() {
                 perfil_usuario_materiais.text = it.getPesoColetasFormatado()
             }
         })
+
+        perfil_usuario_todas_coletas_ico.setOnClickListener {
+            abreListaDeColetas(idUsuario)
+        }
+    }
+
+    private fun abreListaDeColetas(idUsuario: Long) {
+        Log.d(TAG, "Abrindo lista de coletas para o usuário $idUsuario")
+        val intent = Intent(this@PerfilUsuarioActivity, ListaColetaActivity::class.java)
+                .apply { putExtra(Keys.ID_USUARIO, idUsuario) }
+
+        startActivity(intent)
     }
 }
