@@ -2,6 +2,7 @@ package br.com.boomerang.packbackapp.ui.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -34,6 +35,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
 
         viewModel.usuario.observe(this, Observer<Usuario> { usuario ->
             usuario?.let {
+                Log.d(TAG, "Atualiza informações do usuário $it")
                 perfil_usuario_nome.text = it.nome
                 val dataCadastro = "Coletando desde ${formatador.format(it.dataCadastro)}"
                 perfil_usuario_data_inicio.text = dataCadastro
