@@ -1,5 +1,6 @@
 package br.com.boomerang.packbackapp.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import br.com.boomerang.packbackapp.domain.Login
 import br.com.boomerang.packbackapp.domain.Usuario
 import br.com.boomerang.packbackapp.repository.web.LoginService
 import br.com.boomerang.packbackapp.repository.web.PackbackService
+import br.com.boomerang.packbackapp.ui.Keys
 import br.com.boomerang.packbackapp.util.funcionalidadeIndisponivel
 import br.com.boomerang.packbackapp.util.toast
 import kotlinx.android.synthetic.main.activity_login.*
@@ -72,5 +74,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun abreDashboard(usuario: Usuario) {
         Log.d(TAG, "Abrindo Dashboard para o usuário ${usuario.nome}")
+        val intent = Intent(this@LoginActivity, PerfilUsuarioActivity::class.java)
+                .apply { putExtra(Keys.ID_USUARIO, usuario.id) }
+
+        startActivity(intent)
     }
 }
