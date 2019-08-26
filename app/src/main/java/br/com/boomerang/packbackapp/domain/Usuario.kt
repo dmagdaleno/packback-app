@@ -16,7 +16,7 @@ data class Usuario (
 
         val nome: String = "indefinido",
 
-        val foto: String = "@mipmap/ic_launcher_round",
+        val razaoSocial: String? = null,
 
         val dataCadastro: Date = Date(),
 
