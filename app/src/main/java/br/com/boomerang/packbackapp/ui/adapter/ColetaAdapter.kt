@@ -9,6 +9,7 @@ import br.com.boomerang.packbackapp.R
 import br.com.boomerang.packbackapp.domain.Coleta
 import kotlinx.android.synthetic.main.item_coleta.view.*
 import kotlinx.android.synthetic.main.item_embalagem.view.*
+import org.joda.time.format.DateTimeFormatter
 
 class ColetaAdapter (
         private val context: Context,
@@ -22,7 +23,7 @@ class ColetaAdapter (
         val coleta = coletas[posicao]
 
         view.coleta_nome_empresa.text = coleta.usuarioDestino.razaoSocial
-        view.coleta_data.text = "10/08/2019"
+        view.coleta_data.text = coleta.getDataFormatada()
         view.coleta_peso.text = coleta.embalagem.getPesoFormatado()
 
         return view
