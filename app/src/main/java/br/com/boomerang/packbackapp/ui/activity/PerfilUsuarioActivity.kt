@@ -48,6 +48,18 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         perfil_usuario_todas_coletas_ico.setOnClickListener {
             abreListaDeColetas(idUsuario)
         }
+
+        perfil_usuario_solicitar_btn.setOnClickListener {
+            abreFormularioSolicitacaoColeta(idUsuario)
+        }
+    }
+
+    private fun abreFormularioSolicitacaoColeta(idUsuario: Long) {
+        Log.d(TAG, "Abrindo formulario de nova coleta para o usuário $idUsuario")
+        val intent = Intent(this@PerfilUsuarioActivity, NovaColetaActivity::class.java)
+                .apply { putExtra(Keys.ID_USUARIO, idUsuario) }
+
+        startActivity(intent)
     }
 
     private fun abreListaDeColetas(idUsuario: Long) {

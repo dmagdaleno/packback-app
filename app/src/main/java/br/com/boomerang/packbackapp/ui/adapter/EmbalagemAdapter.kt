@@ -22,7 +22,7 @@ class EmbalagemAdapter (
         val embalagem = embalagens[posicao]
 
         view.embalagem_descricao.text = embalagem.descricao
-        view.embalagem_valor.text = formataValor(embalagem.valor)
+        view.embalagem_peso.text = formataValor(embalagem.peso)
 
         return view
     }
