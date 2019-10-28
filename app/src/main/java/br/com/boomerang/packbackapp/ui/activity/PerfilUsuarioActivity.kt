@@ -52,6 +52,10 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         perfil_usuario_solicitar_btn.setOnClickListener {
             abreFormularioSolicitacaoColeta(idUsuario)
         }
+
+        perfil_usuario_buscar_btn.setOnClickListener {
+            listaProdutosPorRegiao()
+        }
     }
 
     private fun abreFormularioSolicitacaoColeta(idUsuario: Long) {
@@ -68,5 +72,10 @@ class PerfilUsuarioActivity : AppCompatActivity() {
                 .apply { putExtra(Keys.ID_USUARIO, idUsuario) }
 
         startActivity(intent)
+    }
+
+    private fun listaProdutosPorRegiao() {
+        Log.d(TAG, "Abrindo lista de embalagens por região")
+        startActivity(Intent(this@PerfilUsuarioActivity, ListaProdutoActivity::class.java))
     }
 }
