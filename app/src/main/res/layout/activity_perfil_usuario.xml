@@ -162,15 +162,30 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/holo_blue_dark"
         android:text="@string/solicitar_coleta"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/perfil_usuario_buscar_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/perfil_usuario_linha_base" />
+
+    <Button
+        android:id="@+id/perfil_usuario_buscar_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/buscar_produtos"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/perfil_usuario_solicitar_btn"
+        app:layout_constraintStart_toStartOf="@id/perfil_usuario_solicitar_btn"
+        app:layout_constraintTop_toBottomOf="@id/perfil_usuario_solicitar_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
