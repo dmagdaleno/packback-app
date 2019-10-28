@@ -28,8 +28,8 @@ class ListaEmbalagemFragment(idUsuario: Long) : Fragment() {
         val view = inflater.inflate(R.layout.fragment_lista_embalagem, container, false)
 
         val embalagens = listOf(
-                Embalagem("Caixa lanche", 0.05),
-                Embalagem("Copo Plastico 500 ml", 0.10)
+                Embalagem(descricao = "Caixa lanche", peso = 0.05),
+                Embalagem(descricao = "Copo Plastico 500 ml", peso = 0.10)
         )
 
         view.lista_embalagem.adapter = EmbalagemAdapter(context!!, embalagens)

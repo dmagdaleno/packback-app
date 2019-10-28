@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 data class Embalagem (
         val descricao: String = "indefinido",
         val peso: Double = 0.0,
+        val volume: Double = 0.0,
         val valor: Double = 0.0
 ) {
     fun getPesoFormatado() = "${peso.formata()} kg"
