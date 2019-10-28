@@ -22,5 +22,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="embalagens">Embalagens</string>
     <string name="enderecos">Endereços</string>
+    <string name="buscar_produtos">BUSCAR PRODUTOS</string>
 
 </resources>
