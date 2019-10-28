@@ -14,6 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.NovaColetaActivity"></activity>
         <activity android:name=".ui.activity.ListaColetaActivity" />
+        <activity android:name=".ui.activity.ListaProdutoActivity" />
         <activity android:name=".ui.activity.PerfilUsuarioActivity"></activity>
         <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
