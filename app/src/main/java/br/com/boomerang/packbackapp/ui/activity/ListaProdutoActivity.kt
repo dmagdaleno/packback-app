@@ -2,19 +2,13 @@ package br.com.boomerang.packbackapp.ui.activity
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import br.com.boomerang.packbackapp.R
-import br.com.boomerang.packbackapp.domain.Embalagem
 import br.com.boomerang.packbackapp.domain.Produto
 import br.com.boomerang.packbackapp.repository.web.PackbackService
 import br.com.boomerang.packbackapp.repository.web.ProdutoService
-import br.com.boomerang.packbackapp.ui.adapter.EmbalagemAdapter
 import br.com.boomerang.packbackapp.ui.adapter.ProdutoAdapter
 import kotlinx.android.synthetic.main.activity_lista_produto.*
-import kotlinx.android.synthetic.main.fragment_lista_embalagem.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,12 +17,14 @@ class ListaProdutoActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "ListaProdutoActivity"
+        private const val defaultTitle = "Produtos"
     }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_produto)
+        title = defaultTitle
 
         // TODO recuperar o Id da região através do beacon
         val idRegiao = 4L
@@ -51,11 +47,18 @@ class ListaProdutoActivity : AppCompatActivity() {
                 ) {
                     response.body()?.let {produtos ->
                         Log.d(TAG, "Produtos encontrados $produtos")
+                        this@ListaProdutoActivity.title = parseTitle(produtos)
                         lista_produto.adapter = ProdutoAdapter(this@ListaProdutoActivity, produtos)
                     }
                 }
 
             })
         }
+    }
+
+    private fun parseTitle(produtos: List<Produto>): String {
+        if(produtos.isEmpty()) return defaultTitle
+
+        return "$defaultTitle - Setor de ${produtos.first().regiao.setor}"
     }
 }
