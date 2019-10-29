@@ -1,8 +1,12 @@
 package br.com.boomerang.packbackapp.ui.activity
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.boomerang.packbackapp.R
 import br.com.boomerang.packbackapp.domain.Login
@@ -10,6 +14,7 @@ import br.com.boomerang.packbackapp.domain.Usuario
 import br.com.boomerang.packbackapp.repository.web.LoginService
 import br.com.boomerang.packbackapp.repository.web.PackbackService
 import br.com.boomerang.packbackapp.ui.Keys
+import br.com.boomerang.packbackapp.ui.Keys.Companion.PERMISSION_REQUEST_COARSE_LOCATION
 import br.com.boomerang.packbackapp.util.funcionalidadeIndisponivel
 import br.com.boomerang.packbackapp.util.toast
 import kotlinx.android.synthetic.main.activity_login.*
@@ -47,6 +52,21 @@ class LoginActivity : AppCompatActivity() {
         login_cadastrar_btn.setOnClickListener {
             funcionalidadeIndisponivel(this)
         }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Acesso a localização")
+                builder.setMessage("Este aplicativo utiliza sua localização para sugerir opções de reciclagem.")
+                builder.setPositiveButton(android.R.string.ok, null)
+                builder.setOnDismissListener {
+                    requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
+                            PERMISSION_REQUEST_COARSE_LOCATION)
+                }
+                builder.show()
+            }
+        }
+
     }
 
     private fun autentica(service: LoginService, login: Login) {
