@@ -11,11 +11,12 @@ Será exibida uma lista de produtos diferentes dependendo do Beacon que for iden
 
 Para isso, os Beacons precisam ser configurados da seguinte forma:
 
-*Beacon 1
+**Beacon 1**
+
 Eddystone UID
 Instance ID (id2): 000000000001
 
-*Beacon 2
+**Beacon 2**
 Eddystone UID
 Instance ID (id2): 000000000002
 
