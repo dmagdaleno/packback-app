@@ -3,8 +3,13 @@
     package="br.com.boomerang.packbackapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
+        android:name=".PackbackApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,10 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.NovaColetaActivity"></activity>
+        <activity android:name=".ui.activity.NovaColetaActivity" />
         <activity android:name=".ui.activity.ListaColetaActivity" />
         <activity android:name=".ui.activity.ListaProdutoActivity" />
-        <activity android:name=".ui.activity.PerfilUsuarioActivity"></activity>
+        <activity android:name=".ui.activity.PerfilUsuarioActivity" />
         <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
