@@ -23,13 +23,13 @@ Instance ID (id2): 000000000001
 
 Instance ID (id2): 000000000002
 
-*Beacon 3
+**Beacon 3**
 
 *Eddystone UID*
 
 Instance ID (id2): 000000000003
 
-*Beacon 4
+**Beacon 4**
 
 *Eddystone UID*
 
