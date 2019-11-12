@@ -8,7 +8,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 class PackbackService {
 
     companion object {
-        private const val API_BASE_URL = "http://35.247.211.12:8080/packback/api/"
+        private const val API_BASE_URL = "http://packback.brazilsouth.cloudapp.azure.com:8080/packback/api/"
     }
 
     private val builder: Retrofit.Builder = Retrofit.Builder()
