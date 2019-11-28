@@ -52,3 +52,5 @@ Instance ID (id2): 000000000003
 *Eddystone UID*
 
 Instance ID (id2): 000000000004
+
+**OBS.:** Print da configuração usando o Beacon Simulator no arquivo *beacon_simulator.jpg*
